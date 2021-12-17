@@ -1,0 +1,1 @@
+# TYPO3_BO_ChromeExtension
