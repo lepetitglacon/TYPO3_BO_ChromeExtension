@@ -1,11 +1,8 @@
-let changeColor = document.getElementById("changeColor");
+let typo3Button = document.getElementById('typo3_button')
 
-chrome.storage.sync.get("color", ({ color }) => {
-    changeColor.style.backgroundColor = color;
-});
-
-changeColor.addEventListener("click", async () => {
+typo3Button.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    console.log(tab.url[-1])
 
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
@@ -16,5 +13,12 @@ changeColor.addEventListener("click", async () => {
 // The body of this function will be executed as a content script inside the
 // current page
 function setPageBackgroundColor(url) {
-    window.open(url+"/typo3", '_blank');
+    let typo3 = ""
+    console.log(url)
+    if (url[-1] == "/") {
+        typo3 = "typo3"
+    } else {
+        typo3 = "/typo3"
+    }
+    window.open(url+typo3, '_blank');
 }

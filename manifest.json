@@ -6,6 +6,15 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/typo3/*"
+      ],
+      "js": [
+        "Typo3.js"
+      ]
+    }],
   "permissions": [
     "storage",
     "activeTab",
