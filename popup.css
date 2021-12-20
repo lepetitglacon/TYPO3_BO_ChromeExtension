@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+
+    background-color: #333333;
+    width: 128px;
+}
+img {
+    width: 16px;
+    height: 16px;
+}
+#gototypo {
+    margin-left: 5px;
+}
+#typo3_button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 32px;
+    border-radius: 5px;
+}

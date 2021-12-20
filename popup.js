@@ -2,7 +2,7 @@ let typo3Button = document.getElementById('typo3_button')
 
 typo3Button.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    console.log(tab.url[-1])
+    console.log(tab.url)
 
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
